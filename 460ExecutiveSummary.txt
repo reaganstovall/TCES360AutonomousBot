@@ -1,0 +1,44 @@
+Executive Summary
+Regan Stovall and Andrew Gates
+TCES 460 - Embedded Systems
+March 17 2017
+
+Autonomous Vehicle with Missile Defense System
+
+Summary - 
+
+The idea of this project was to create fully autonomous vehicles that were armed with a turret and a cannon that through 
+the use of a camera were able to identify and fire at two different types of vehicles, RC cars and drones.
+
+This project involved interfacing a Lego Mindstorms robotics kit to a Raspberry Pi via a BrickPi shield. This allowed 
+us to control various sensors and motors from the Lego Mindstorms robotics kit through the Raspberry Pi. We created 
+a custom made PCB to allow for control of the cannon which had multiple motors, limit switches, LEDs and etc. We used 
+a small turret that we were able to modify to be controlled via the Raspberry Pi as well. Through the use of a Raspberry 
+Pi Cam we were able to use OpenCV to identify different shapes, which were assigned to drones and RC cars. Once we 
+identified a drone or RC car we were able to track and target it with our cannon, then when we had a good shot we would 
+fire at them.
+
+Challenges Faced - 
+
+There were many challenges faced during this project. The biggest individual challenges were creating and using the custom 
+PCB that allowed for control of the cannon. The other biggest individual challenge was getting OpenCV trained properly to 
+allow for maximum targeting potential with minimal negative results. The main overall challenge would have to be connecting 
+all of the various components together using Multiprocessing in Python. We had to have 4 different processes (firing, OpenCV, 
+cannon, and navigation) all communicate with each other and work in sync with each other.
+
+Suggestions - 
+
+A suggestion for next year would be to take all of the work that took us multiple weeks to perfect (mainly the PCB for the 
+cannon and OpenCV and the corresponding cascade files) and reuse them next year. You could possibly still introduce these 
+things to the class to show them how they can do them and learn themselves, but then they can use the prebuilt options to 
+allow for faster time to completion. If they are able to get to completion faster than more ideas can be implemented like 
+mapping, peer to peer, and etc.
+
+Conclusion - 
+
+In conclusion this project was probably one of the most memorable and informative projects we have done here at University 
+of Washington Tacoma so far. To be able combine all of the various aspects that we did into one unified design, while learning 
+new things like PCB design, image recognition, and autonomous navigation, just shows how far we’ve come as students. Hopefully 
+this project gets repeated by future students and extended into more advanced systems. Hopefully we all benefited from this 
+project as well as the Computer Engineering program as well, so that this carries on and influences more students to come to 
+University of Washington Tacoma
