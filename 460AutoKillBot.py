@@ -4,7 +4,7 @@
 #	-John Reagan Stovall
 #	-Andrew Gates 
 # Purpose:
-# This the source code for an autonomous robot run using Raspberry Pi, connected with 
+# This is the source code for an autonomous robot run using Raspberry Pi, connected with 
 # Bricktronics Robotics Shield and using lego servo motors. The project also featrures 
 # a pi-camera attached to two axis nerf canon to track and shoot specifically identified 
 # targets. The Robot also features dinamic speed and object avoidance, keeps track of 
@@ -204,12 +204,13 @@ def stopX():
 def stopY():
         print ("stop Y")
         GPIO.output(Y1Pin, GPIO.LOW)
-        GPIO.output(Y2Pin, GPIO.LOW)		
-def stopC():
+        GPIO.output(Y2Pin, GPIO.LOW)	
+	
+def stopC(): # Stop Cannon Fire
         print ("stop C")
         GPIO.output(FCPin, GPIO.LOW)
                
-def stopT():
+def stopT(): # Stop Turret Fire
         print ("stop T")
         GPIO.output(FTPin, GPIO.LOW)
 
@@ -222,7 +223,6 @@ def fireCannon():
         GPIO.output(FCPin, GPIO.LOW)
         time.sleep(.01)
 	#cannonShots = cannonShots - 1
-		
 		
 def fireTurret():
 	GPIO.output(FTPin, GPIO.HIGH)
@@ -248,8 +248,7 @@ def laserOff():
 #------------------CANNON STUFF--------------------
 
 #------------------OPENCV STUFF--------------------
-#------------------OPENCV STUFF--------------------
-
+# For target recognition and tracking
 def opencv():
     # initialize the camera and grab a reference to the raw camera capture
     camera = PiCamera()
@@ -293,8 +292,8 @@ def opencv():
 
     except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
         print("Breaking")
+	
 def cannon():
-    
     try:
         print("Cannon On")
         time.sleep(200)
@@ -335,6 +334,7 @@ def navigation():
     preDistR = 0
     speedL = 1
     speedR = 1
+	
     while(1):
         BrickPiUpdateValues()
         distL = BrickPi.Sensor[US2_port_number]
